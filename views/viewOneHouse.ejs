@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Estates</title>
+    <%- include("modules/estilos") %>
+  </head>
+  <body>
+    <header><%- include("modules/navbar") %></header>
+    <main>
+      <div class="container-xxl ">
+        <div class="row d-flex justify-content-center">
+          <div class="col-10">
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/images/casas/<%= house.house_img %>" class="d-block w-100" alt="...">
+                </div>
+                <% images.forEach((extra)=>{ %>
+                <div class="carousel-item">
+                  <img src="/images/casas/<%= extra.images %>" class="d-block w-100" alt="...">
+                </div>
+                <% }) %>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-10 d-flex justify-content-center">
+            <div class="contenedor">
+              <div class="row d-flex justify-content-between">
+                <div class="col-xxl-4">
+                  <ul>
+                    <li><h4>Ciudad: <%= house.city %></h4></li>
+                    <li><h4>Dirección: <%= house.address %></h4></li>
+                    <li><h4>Metros cuadrados: <%= house.m2 %></h4></li>
+                    <li>
+                      <h4>Año de construccion: <%= house.built_year %></h4>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="col-xxl-7 d-flex flex-column justify-content-between"
+                >
+                  <div class="div">
+                    <span>Descripcion:</span>
+                    <p><%= house.description %></p>
+                  </div>
+                  <form
+                    action="/households/addimages/<%= house.households_id %>"
+                    method="post"
+                    enctype="multipart/form-data"
+                    class="d-flex justify-content-end"
+                  >    
+                  <label for="addimg" class="boton-principal me-3 p-1">Elige foto</label>
+                  <input type="file" name="img" id="addimg" hidden/>
+                  <button type="submit" class="boton-principal">Añadir</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+    </main>
+    <%- include("modules/footer") %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

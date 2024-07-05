@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Estates</title>
+    <%- include("modules/estilos") %>
+    <link rel="stylesheet" href="../stylesheets/index.css" />
+  </head>
+  <body>
+    <header><%- include("modules/navbar") %></header>
+    <main class="fondoindex">
+      <div class="container-xxl">
+        <div class="row d-flex align-items-center py-3 row-gap-md-3 row-gap-3">
+          <div class="col-xxl-6 col-md-12 col-lg-6">
+            <div class="entrada d-flex flex-column">
+              <h1>Bienvenidos a <span class="marca">IdeaLiusta</span></h1>
+              <p>Tu portal inmobiliario</p>
+              <p class="parrafo py-4">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam beatae quam totam eligendi doloremque tenetur
+                voluptates excepturi fuga numquam distinctio consequuntur sint,
+                repudiandae, velit hic laborum minus vel incidunt odit,
+                molestiae in eius exercitationem itaque. Enim, ratione.
+                Expedita, animi culpa?
+              </p>
+              <span>Unete a nosotros:</span>
+              <button
+                class="boton-principal"
+                onclick="window.location.href=`/realestates/inscribeRealEstate`"
+              >
+                Registrate
+              </button>
+            </div>
+          </div>
+          <div class="col-xxl-6 col-md-12 col-lg-6 align-items-center filter">
+            <form
+              action="/households/filterHouses"
+              method="post"
+              class="d-flex flex-column formulario row-gap-3 text-end"
+            >
+              <h2>Busca tu vivienda</h2>
+              <label for="city">Ciudad</label>
+              <input type="text" name="city" id="" />
+              <label for="m2">metros cuadrados</label>
+              <input type="text" name="m2" id="" />
+              <button class="boton-principal">buscar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("modules/footer") %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

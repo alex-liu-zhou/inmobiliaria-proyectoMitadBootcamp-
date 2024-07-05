@@ -1,0 +1,47 @@
+.formulario {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 25px;
+  margin-block: 5vh;
+  max-width: 600px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 15px;
+  border: 2px solid var(--dorado-principal);
+}
+
+.formulario .form-text {
+  position: absolute;
+  background-color: white;
+  display: inline-block;
+  padding-inline: 3px;
+  font-size: 1.1rem;
+  left: 5%;
+  top: 28%;
+  transform: translateY(-50%);
+  transition: top 0.3s, transform 0.3s, font-size 0.3s;
+}
+
+.form-input:focus + .form-label .form-text,
+.form-input:not(:placeholder-shown) + .form-label .form-text {
+  top: 0;
+  transform: translateY(-70%);
+  font-size: 0.85rem;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+}
+
+span {
+  position: relative;
+  bottom: 13px;
+}

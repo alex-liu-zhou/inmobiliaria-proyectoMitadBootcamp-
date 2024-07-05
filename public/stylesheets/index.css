@@ -1,0 +1,51 @@
+.fondoindex {
+  background-image: url(/images/9986.1.VISTA-NOCTURNA-FINAL-SN-1170x785.webp);
+  background-size: cover;
+  background-position: center;
+}
+.row {
+  height: 100%;
+  background-size: cover;
+  padding-inline: 5vw;
+  color: white;
+  padding-block: 0px;
+}
+
+.formulario {
+  background-color: #3e3e3e9e;
+  padding: 40px;
+  border: 3px solid var(--dorado-principal);
+  box-shadow: inset 3px 3px var(--gris-secundario),
+    inset -3px -3px var(--gris-secundario);
+}
+
+.entrada {
+  background-color: #3e3e3e9e;
+  border: 3px solid var(--dorado-principal);
+  box-shadow: inset 3px 3px var(--gris-secundario),
+    inset -3px -3px var(--gris-secundario);
+  padding: 40px;
+}
+
+.marca {
+  font-size: 4rem;
+}
+@media (max-width: 450px) {
+  .marca {
+    font-size: 3rem;
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: end;
+}
+
+@media (max-width: 990px) {
+  .filter {
+    justify-content: center;
+  }
+}
+.parrafo {
+  padding-right: 12vw;
+}

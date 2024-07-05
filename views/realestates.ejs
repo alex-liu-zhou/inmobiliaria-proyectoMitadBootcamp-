@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Estates</title>
+    <%- include("modules/estilos") %>
+    <link rel="stylesheet" href="/stylesheets/realestate-cards.css">
+  <body>
+    <header>
+    <%- include("modules/navbar") %>
+    </header>
+    <main class="padding-general">
+      <div class="container-xxl">
+        <h1 class="text-white text-center pb-5">Nuestras inmobiliarias</h1>
+        <div class="row">
+          <% result.forEach((estate)=>{ %>
+
+          <div class="col-xxl-4 col-md-6 d-flex justify-content-center">
+            <div class="rs-card border-general">
+              <div class="rs-logo"><img src="/images/inmobiliarias/<%= estate.realestate_img %>" alt=""></div>
+              <div class="cont-texto">
+                <div class="datos">
+                  <h2><%= estate.realestate_name %></h2>
+                  <h3>Telefono:<%= estate.phone_number %></h3>
+                  <div class="datos2">
+                    <h3>Email:<%= estate.email %></h3>
+                    <p><%= estate.realestate_description %></p>
+                    <button class="boton-principal"
+                    onclick="window.location.href=`/realestates/viewOneRealEstate/<%= estate.realestate_id %>`"
+                    >Ver inmuebles</button>
+                  </div>
+                  
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+    <%- include("modules/footer") %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

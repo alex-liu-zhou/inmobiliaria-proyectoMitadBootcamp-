@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Estates</title>
+    <%- include("modules/estilos") %>
+    <link rel="stylesheet" href="/stylesheets/cards.css" />
+  </head>
+  <body>
+    <header><%- include("modules/navbar") %></header>
+    <main class="padding-general">
+      <div class="container-xxl">
+        <div class="row">
+          <div class="col-xxl-4 pb-md-5 pb-5 px-md-5">
+            <div class="contenedor sticky-top d-flex flex-column row-gap-2">
+              <img
+                src="/images/inmobiliarias/<%= rEstate.realestate_img %>"
+                alt=""
+                class="border-general"
+              />
+              <h1 class="h1-inmo">
+                Imobiliaria: <%= rEstate.realestate_name %>
+              </h1>
+              <h3 class="inmo">
+                <i class="bi bi-telephone"></i>: <%= rEstate.phone_number %>
+              </h3>
+              <h3 class="inmo">
+                <i class="bi bi-envelope"></i>: <%= rEstate.email %>
+              </h3>
+              <p><%= rEstate.realestate_description %></p>
+              <div class="d-flex justify-content-center">
+                <button
+                  onclick="window.location.href=`/houseHolds/formhouse/<%= rEstate.realestate_id %>/<%= rEstate.realestate_name %>`"
+                  class="boton-principal w-75"
+                >
+                  Añadir propiedad
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xxl-8 d-flex justify-content-around flex-wrap row-gap-5 column-gap-5"
+          >
+            <% resultHouse.forEach((house)=>{ %>
+            <div class="custom-card">
+              <img
+                src="/images/casas/<%= house.house_img %>"
+                alt=""
+                class="custom-card-img"
+              />
+              <div class="card-info d-flex flex-column">
+                <span>Localidad: <%= house.city %></span>
+                <span>Direccion: <%= house.address %></span>
+              </div>
+              <div class="custom-card-body d-flex flex-column">
+                <p>Descripcion: <br /><%= house.description %></p>
+                <span>Localidad: <%= house.city %></span>
+                <span>Direccion: <%= house.address %></span>
+                <span>Construido en: <%= house.built_year %></span>
+                <div>
+                  <button
+                    class="boton-principal"
+                    onclick="window.location.href=`/households/viewOneHouseHold/<%= house.households_id %>`"
+                  >
+                    Ver mas
+                  </button>
+                  <button
+                    class="boton-principal"
+                    onclick="window.location.href=`/households/editFormHouse/<%= house.households_id %>`"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    class="boton-principal"
+                    onclick="window.location.href=`/households/logicDelete/<%= house.households_id %>`"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("modules/footer") %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

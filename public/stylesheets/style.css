@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --negro-principal: #0a0a0a;
+  --gris-principal: #3e3e3e;
+  --dorado-principal: #daa520;
+  --gris-secundario: #c0c0c0;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    var(--negro-principal),
+    var(--gris-principal)
+  );
+  font-family: "Merriweather", serif;
+}
+
+.navbar {
+  min-height: 7vh;
+}
+
+.navbackground {
+  background-color: #daa520;
+}
+.logo-nav {
+  height: 6vh;
+  border-radius: 5px;
+}
+
+.boton-principal {
+  background-color: var(--dorado-principal);
+  color: var(--negro-principal);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.5s ease;
+  font-size: 16px;
+  font-weight: bold;
+}
+.boton-principal:hover {
+  background-color: var(--gris-secundario);
+}
+
+.boton-secundario {
+  background-color: var(--gris-secundario);
+  color: var(--negro-principal);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.5s ease;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+.footer-bg {
+  background-color: var(--negro-principal);
+  color: white;
+}
+
+.bi {
+  color: white;
+}
+
+.contenedor {
+  background-color: #3e3e3e9e;
+  padding: 40px;
+  border: 3px solid var(--dorado-principal);
+  box-shadow: inset 3px 3px var(--gris-secundario),
+    inset -3px -3px var(--gris-secundario),
+    inset 3px -3px var(--gris-secundario), inset -3px 3px var(--gris-secundario);
+  color: white;
+  border-radius: 10px;
+}
+.padding-general {
+  padding-block: 8vh;
+}
+
+.border-general {
+  border: 3px solid var(--dorado-principal);
+  box-shadow: inset 3px 3px var(--gris-secundario),
+    inset -3px -3px var(--gris-secundario),
+    inset 3px -3px var(--gris-secundario), inset -3px 3px var(--gris-secundario);
+}
+
+footer {
+  height: 8vh;
+}
+main {
+  min-height: 80vh;
+}
+
+.h1-inmo {
+  font-size: 2.3rem;
+}
+
+.inmo {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 430px) {
+  .inmo {
+    font-size: 1rem;
+  }
+}

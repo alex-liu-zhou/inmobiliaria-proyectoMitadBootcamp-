@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Estates</title>
+    <link rel="stylesheet" href="/stylesheets/formulario.css" />
+    <%- include("modules/estilos") %>
+  </head>
+  <body>
+    <header><%- include("modules/navbar") %></header>
+    <main class="d-flex justify-content-center">
+      <form
+        action="/households/editHouse/<%= house.households_id %>"
+        method="post"
+        class="d-flex flex-column formulario form-casas"
+      >
+        <h2 class="titulo pb-4">
+          Edicion de la casa con direccion:
+          <br />
+          <%= house.address %>
+        </h2>
+        <div class="form-group">
+          <input
+            class="form-input"
+            type="text"
+            name="city"
+            placeholder=""
+            id="city"
+            value="<%= house.city %>"
+          />
+          <label class="form-label" for="nombre">
+            <div class="form-text">Ciudad</div>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            name="address"
+            class="form-input"
+            placeholder=""
+            id="address"
+            value="<%= house.address %>"
+          />
+          <label for="address" class="form-label">
+            <div class="form-text">Dirección</div>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="year"
+            name="built_year"
+            class="form-input"
+            placeholder=""
+            id="built_year"
+            value="<%= house.built_year %>"
+          />
+          <label for="built_year" class="form-label">
+            <div class="form-text">Año de construccion</div>
+          </label>
+        </div>
+
+        <div class="form-group mb-3">
+          <textarea name="description" id="" class="form-input" placeholder="">
+<%= house.description %></textarea
+          >
+          <label for="description" class="form-label"
+            ><div class="form-text">Descripción</div></label
+          >
+        </div>
+        <button class="boton-principal">Enviar</button>
+      </form>
+    </main>
+    <%- include("modules/footer") %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
